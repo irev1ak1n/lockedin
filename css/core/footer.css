@@ -1,0 +1,17 @@
+.footer {
+    border-top: 1px solid #ddd;
+    padding: 24px 0;
+    margin-top: 40px;
+}
+
+.footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer span {
+    color: #666;
+    font-size: 0.9rem;
+}

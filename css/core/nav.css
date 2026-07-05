@@ -1,0 +1,37 @@
+.nav {
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 1.15rem;
+    color: #111;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: #111;
+}
+
+@media (max-width: 700px) {
+    .nav-links {
+        display: none;
+    }
+}
