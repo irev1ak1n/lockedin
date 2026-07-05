@@ -1,22 +1,22 @@
 :root {
-    --ink: #07090E;
-    --ink-2: #0B0E15;
-    --panel: #111725;
-    --panel-2: #161D2E;
-    --line: rgba(255, 255, 255, 0.08);
-    --line-strong: rgba(255, 255, 255, 0.15);
-    --text: #EEF1F7;
-    --muted: #8B94A7;
-    --faint: #5A6376;
-    --accent: #5E76FF;
-    --accent-2: #9A6BFF;
-    --accent-ink: #080B12;
-    --glow: rgba(94, 118, 255, 0.45);
-    --ok: #43D6A0;
-    --shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.8);
-    --r: 16px;
-    --r-lg: 22px;
-    --sidebar-w: 260px;
+    --ink: #000000;                                 /* main page background */
+    --ink-2: #0A0A0A;                               /* darker bg for sidebar, inputs */
+    --panel: #101010;                               /* card background */
+    --panel-2: #171717;                             /* lighter card bg for hover */
+    --line: rgba(255, 255, 255, 0.08);              /* default borders */
+    --line-strong: rgba(255, 255, 255, 0.16);       /* stronger borders, button outlines */
+    --text: #F4F4F0;                                /* main text color */
+    --muted: #9C9C94;                               /* secondary text, descriptions */
+    --faint: #63635C;                               /* dimmest text, labels, hints */
+    --accent: #FF7A1A;                              /* primary orange, links, highlights */
+    --accent-2: #FFB25E;                            /* amber, second gradient color */
+    --accent-ink: #140800;                          /* dark text on accent buttons */
+    --glow: rgba(255, 122, 26, 0.4);                /* orange glow shadows */
+    --ok: #43D6A0;                                  /* green, success, correct answers */
+    --shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.9); /* card drop shadow */
+    --r: 16px;                                      /* default border radius */
+    --r-lg: 22px;                                   /* large border radius, big cards */
+    --sidebar-w: 260px;                             /* sidebar width */
 }
 
 * {
@@ -43,8 +43,8 @@ body::before {
     position: fixed;
     inset: 0;
     background:
-            radial-gradient(600px 500px at 78% 8%, rgba(94, 118, 255, 0.14), transparent 70%),
-            radial-gradient(700px 600px at 8% 90%, rgba(154, 107, 255, 0.1), transparent 70%);
+            radial-gradient(600px 500px at 78% 8%, rgba(255, 122, 26, 0.12), transparent 70%),
+            radial-gradient(700px 600px at 8% 90%, rgba(255, 178, 94, 0.07), transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
@@ -124,7 +124,7 @@ a {
 .btn:hover {
     border-color: var(--accent);
     color: #fff;
-    background: rgba(94, 118, 255, 0.06);
+    background: rgba(255, 122, 26, 0.06);
 }
 
 .btn-lg {
@@ -146,7 +146,7 @@ a {
     padding: 7px 13px;
     border: 1px solid var(--line);
     border-radius: 100px;
-    background: rgba(94, 118, 255, 0.06);
+    background: rgba(255, 122, 26, 0.06);
 }
 
 .eyebrow::before {

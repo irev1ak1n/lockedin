@@ -1,23 +1,85 @@
 .footer {
     border-top: 1px solid var(--line);
-    padding: 32px 0;
-    margin-top: 60px;
+    padding: 52px 0 36px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
 }
 
-.footer .wrap {
+.foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 36px;
+    margin-bottom: 40px;
+}
+
+.foot-brand p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-top: 16px;
+    max-width: 260px;
+}
+
+.foot-free {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    color: var(--ok);
+    border: 1px solid rgba(67, 214, 160, 0.3);
+    border-radius: 100px;
+    padding: 5px 11px;
+}
+
+.foot-col h5 {
+    font-family: 'Space Grotesk';
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 15px;
+}
+
+.foot-col a {
+    display: block;
+    color: var(--muted);
+    font-size: 0.93rem;
+    margin-bottom: 11px;
+    transition: color 0.2s;
+}
+
+.foot-col a:hover {
+    color: var(--accent);
+}
+
+.foot-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
     flex-wrap: wrap;
     gap: 12px;
 }
 
-.footer span {
+.foot-bottom span {
     color: var(--faint);
     font-size: 0.86rem;
 }
 
-.footer .made b {
+.foot-bottom .made b {
     color: var(--accent);
     font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .foot-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .foot-grid {
+        grid-template-columns: 1fr;
+    }
 }
