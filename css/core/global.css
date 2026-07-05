@@ -1,22 +1,20 @@
 :root {
-    --ink: #000000;                                 /* main page background */
-    --ink-2: #0A0A0A;                               /* darker bg for sidebar, inputs */
-    --panel: #101010;                               /* card background */
-    --panel-2: #171717;                             /* lighter card bg for hover */
-    --line: rgba(255, 255, 255, 0.08);              /* default borders */
-    --line-strong: rgba(255, 255, 255, 0.16);       /* stronger borders, button outlines */
-    --text: #F4F4F0;                                /* main text color */
-    --muted: #9C9C94;                               /* secondary text, descriptions */
-    --faint: #63635C;                               /* dimmest text, labels, hints */
-    --accent: #FF7A1A;                              /* primary orange, links, highlights */
-    --accent-2: #FFB25E;                            /* amber, second gradient color */
-    --accent-ink: #140800;                          /* dark text on accent buttons */
-    --glow: rgba(255, 122, 26, 0.4);                /* orange glow shadows */
-    --ok: #43D6A0;                                  /* green, success, correct answers */
-    --shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.9); /* card drop shadow */
-    --r: 16px;                                      /* default border radius */
-    --r-lg: 22px;                                   /* large border radius, big cards */
-    --sidebar-w: 260px;                             /* sidebar width */
+    --ink: #000000;
+    --ink-2: #0A0A0A;
+    --panel: #101010;
+    --panel-2: #171717;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-strong: rgba(255, 255, 255, 0.16);
+    --text: #F4F4F0;
+    --muted: #9C9C94;
+    --faint: #63635C;
+    --accent: #FF7A1A;
+    --accent-2: #FFB25E;
+    --accent-ink: #140800;
+    --ok: #43D6A0;
+    --r: 16px;
+    --r-lg: 22px;
+    --sidebar-w: 260px;
 }
 
 * {
@@ -32,27 +30,13 @@ html {
 body {
     background: var(--ink);
     color: var(--text);
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.55;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background:
-            radial-gradient(600px 500px at 78% 8%, rgba(255, 122, 26, 0.12), transparent 70%),
-            radial-gradient(700px 600px at 8% 90%, rgba(255, 178, 94, 0.07), transparent 70%);
-    pointer-events: none;
-    z-index: 0;
 }
 
 .content {
     margin-left: var(--sidebar-w);
-    position: relative;
-    z-index: 1;
 }
 
 .wrap {
@@ -77,26 +61,25 @@ a {
     font-family: 'Space Grotesk';
     font-weight: 700;
     font-size: 1.18rem;
-    letter-spacing: -0.02em;
 }
 
 .brand-mark {
     width: 28px;
     height: 28px;
     border-radius: 8px;
-    flex: none;
     position: relative;
     background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    box-shadow: 0 0 20px -4px var(--glow);
 }
 
 .brand-mark::before {
     content: "";
     position: absolute;
-    inset: 7px;
+    top: 7px;
+    left: 7px;
+    right: 7px;
+    bottom: 7px;
     border: 2px solid var(--accent-ink);
     border-radius: 3px;
-    opacity: 0.85;
 }
 
 .brand span {
@@ -113,7 +96,7 @@ a {
     background: transparent;
     color: var(--text);
     border: 1px solid var(--line-strong);
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    transition: 0.2s;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -146,7 +129,6 @@ a {
     padding: 7px 13px;
     border: 1px solid var(--line);
     border-radius: 100px;
-    background: rgba(255, 122, 26, 0.06);
 }
 
 .eyebrow::before {
@@ -155,7 +137,6 @@ a {
     height: 6px;
     border-radius: 50%;
     background: var(--accent);
-    box-shadow: 0 0 10px var(--accent);
 }
 
 .section-label {
@@ -170,9 +151,8 @@ a {
 .section-head {
     font-family: 'Space Grotesk';
     font-weight: 700;
-    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
-    letter-spacing: -0.03em;
-    line-height: 1.08;
+    font-size: 2.6rem;
+    line-height: 1.1;
     max-width: 640px;
 }
 
@@ -181,32 +161,19 @@ a {
     color: var(--accent);
 }
 
-:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
-    border-radius: 6px;
-}
-
 @media (max-width: 900px) {
     .content {
         margin-left: 0;
         padding-top: 64px;
+    }
+
+    .section-head {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 560px) {
     .wrap {
         padding: 0 20px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
-
-    html {
-        scroll-behavior: auto;
     }
 }

@@ -37,20 +37,18 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 10px;
+    padding: 10px;
     border-radius: 10px;
     color: var(--muted);
     font-size: 0.94rem;
     font-weight: 500;
     position: relative;
-    transition: background 0.18s, color 0.18s;
+    transition: 0.18s;
 }
 
 .side-link svg {
     width: 18px;
     height: 18px;
-    flex: none;
-    opacity: 0.85;
 }
 
 .side-link:hover {
@@ -59,7 +57,7 @@
 }
 
 .side-link.active {
-    background: rgba(94, 118, 255, 0.1);
+    background: rgba(255, 122, 26, 0.1);
     color: var(--text);
 }
 
@@ -71,7 +69,7 @@
     bottom: 8px;
     width: 3px;
     border-radius: 0 3px 3px 0;
-    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    background: var(--accent);
 }
 
 .side-link .soon {
@@ -120,8 +118,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    background: rgba(7, 9, 14, 0.8);
-    backdrop-filter: blur(16px);
+    background: var(--ink);
     border-bottom: 1px solid var(--line);
     z-index: 55;
 }
@@ -148,7 +145,10 @@
 .side-overlay {
     display: none;
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(0, 0, 0, 0.55);
     z-index: 58;
     opacity: 0;
