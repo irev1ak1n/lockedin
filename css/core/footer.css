@@ -1,17 +1,23 @@
 .footer {
-    border-top: 1px solid #ddd;
-    padding: 24px 0;
-    margin-top: 40px;
+    border-top: 1px solid var(--line);
+    padding: 32px 0;
+    margin-top: 60px;
 }
 
 .footer .wrap {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
 }
 
 .footer span {
-    color: #666;
-    font-size: 0.9rem;
+    color: var(--faint);
+    font-size: 0.86rem;
+}
+
+.footer .made b {
+    color: var(--accent);
+    font-weight: 500;
 }

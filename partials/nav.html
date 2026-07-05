@@ -1,10 +1,66 @@
-<nav class="nav">
-    <div class="wrap nav-inner">
-        <a href="index.html" class="brand">LockedIn</a>
-        <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#how">How it works</a>
-        </div>
+<header class="topbar">
+    <a href="index.html" class="brand"><span class="brand-mark"></span>Locked<span>In</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<aside class="sidebar" id="sidebar">
+    <div class="side-brand">
+        <a href="index.html" class="brand"><span class="brand-mark"></span>Locked<span>In</span></a>
+    </div>
+
+    <div class="side-upload">
+        <a href="study.html" class="btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            New study set
+        </a>
+    </div>
+
+    <nav class="side-nav">
+        <span class="side-label mono">Main</span>
+        <a href="index.html" class="side-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+            Home
+        </a>
+        <a href="study.html" class="side-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Quiz me
+        </a>
+        <a href="#" class="side-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            AI chat
+            <span class="soon">SOON</span>
+        </a>
+        <a href="#" class="side-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
+            Study plans
+            <span class="soon">SOON</span>
+        </a>
+
+        <span class="side-label mono">Library</span>
+        <a href="#" class="side-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Materials
+            <span class="soon">SOON</span>
+        </a>
+        <a href="#" class="side-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
+            Flashcards
+            <span class="soon">SOON</span>
+        </a>
+        <a href="#" class="side-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            Lessons
+            <span class="soon">SOON</span>
+        </a>
+    </nav>
+
+    <div class="side-bottom">
+        <span class="free-note mono">100% FREE · NO PAYWALL</span>
+        <a href="#" class="btn">Log in</a>
         <a href="#" class="btn">Start free</a>
     </div>
-</nav>
+</aside>
+
+<div class="side-overlay" id="sideOverlay"></div>

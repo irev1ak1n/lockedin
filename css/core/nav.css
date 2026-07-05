@@ -1,37 +1,192 @@
-.nav {
-    border-bottom: 1px solid #ddd;
-    background: #fff;
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-w);
+    background: var(--ink-2);
+    border-right: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    padding: 22px 16px;
+    z-index: 60;
+    transition: transform 0.28s ease;
 }
 
-.nav-inner {
+.side-brand {
+    padding: 4px 10px 22px;
+}
+
+.side-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    overflow-y: auto;
+}
+
+.side-label {
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--faint);
+    padding: 16px 10px 8px;
+}
+
+.side-link {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 60px;
+    gap: 12px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: 0.94rem;
+    font-weight: 500;
+    position: relative;
+    transition: background 0.18s, color 0.18s;
 }
 
-.brand {
-    font-weight: bold;
-    font-size: 1.15rem;
-    color: #111;
+.side-link svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    opacity: 0.85;
 }
 
-.nav-links {
+.side-link:hover {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+}
+
+.side-link.active {
+    background: rgba(94, 118, 255, 0.1);
+    color: var(--text);
+}
+
+.side-link.active::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+}
+
+.side-link .soon {
+    margin-left: auto;
+    font-family: 'JetBrains Mono';
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    color: var(--faint);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 2px 7px;
+}
+
+.side-upload {
+    margin: 14px 0 4px;
+}
+
+.side-upload .btn {
+    width: 100%;
+}
+
+.side-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
     display: flex;
-    gap: 22px;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.nav-links a {
-    color: #444;
-    font-size: 0.95rem;
+.side-bottom .free-note {
+    font-family: 'JetBrains Mono';
+    font-size: 0.64rem;
+    letter-spacing: 0.12em;
+    color: var(--ok);
+    text-align: center;
+    padding-bottom: 4px;
 }
 
-.nav-links a:hover {
-    color: #111;
+.topbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: rgba(7, 9, 14, 0.8);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+    z-index: 55;
 }
 
-@media (max-width: 700px) {
-    .nav-links {
-        display: none;
+.menu-toggle {
+    background: none;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: currentColor;
+    margin: 3px auto;
+    transition: 0.25s;
+}
+
+.side-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 58;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    body.side-open .sidebar {
+        transform: translateX(0);
+    }
+
+    .topbar {
+        display: flex;
+    }
+
+    .side-overlay {
+        display: block;
+        pointer-events: none;
+    }
+
+    body.side-open .side-overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    body.side-open .menu-toggle span:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+    }
+
+    body.side-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    body.side-open .menu-toggle span:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg);
     }
 }
